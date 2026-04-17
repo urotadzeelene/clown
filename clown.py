@@ -1,48 +1,132 @@
 from turtle import *
 import random
+print("1. for green, 2. for yellow")
+
+bgcolor_number = input("color of back")
+match (bgcolor_number):
+    case '1':
+        b_color = (0,1,0) # green
+    
+    case '2':
+        b_color = (0,1,1) #yellow 
+       
+    case _:
+        b_color = (1,1,1)
+    
+
 screen = Screen()
 speed(200)
-bgcolor("black")
+bgcolor(b_color)
+
+print("1. for red, 2. for blue")
+
+hcolor_number = int(input("color of hair"))
+match (hcolor_number):
+    case 1:
+        h_color = (1,0,0) # red
+        hh_color = (1.0, 0.647, 0) #orange
+    case 2:
+        h_color = (0,0,1) #blue
+        hh_color = (0.68, 0.85, 0.90) ## light blue
+    case _:
+        h_color = (1,1,1)
+        hh_color = (0.5,0.5,0.5)
+
+
+
+
+
+
+
 #head-----------------------------------------
-def stencil(X,Y,r):
+def stencil(X,Y,r, c):
     penup()
     goto(X,Y)
     pendown()
-    color('papayawhip')
+    color(c)
     begin_fill()
     circle(r)
-path = [(-45,-115), (42-115), (0,-130), (-50,50), (110, -30 ), (-110,-30),(40,100)]
-for x, y in path:
-    stencil(x,y, random.randint(60, 70))
+
+face = [(0,-100, 100), (-42, -115, 70), (42, -115, 70), (0, -130, 60)]     
+for X, Y, r in face:
+    stencil(X,Y, r, 'papayawhip')
     end_fill()
     penup()
 
-color("white")
-#hair ---------------------------------------
-def stencil(X,Y,r=60):
-    penup()
-    goto(X,Y)
-    pendown()
-    color('red')
-    begin_fill()
-    circle(r)
-path = [(125,25), (-125,25 ), (-60, 50), (25,125), (110, -30), (-110,-30),(40,100)]
-for x, y in path:
-    stencil(x,y, random.randint(60, 70))
+
+hair =[(140,25), (-150,25), (-60,50), (25,80), (30,80), (20,60), (50,50), (140,-30), (-140,-30), (35,80)]
+for X, Y in hair:
+    stencil(X,Y, random.randint(58,74), h_color)
     end_fill()
     penup()
+
+highlight =[(140,2), (-150,25), (-60,50), (25,80), (30,80), (20,60), (50,50), (140,-30),(-140,-30), (35,80)]
+for X, Y in highlight:
+    stencil(X,Y, random.randint(5,74), hh_color)
+    end_fill()
+    penup()
+
+eyes = [(-50,10, 19, 'white'),(50,10,19,'white'),(-50,10,15,'blue'),(50,10,15,'blue') ]
+for X, Y, r, c in eyes:
+    stencil(X,Y, r, c)
+    end_fill()
+    penup()
+
+
+
+    # penup()
+    # goto(X,Y)
+    # pendown()
+    # color('red')
+    # begin_fill()
+    # circle(random.randint(60,70))
+
+
+#hair---------------------------------------
+
+# path = [(125,25), (-125,25), (-60, 50), (25,125), (110, -30), (-110,-30),(40,100)]
+
     
-def stencil(X,Y,r=40):
-    penup()
-    goto(x,y)
-    pendown()
-    color('orangered')
-    begin_fill()
-    circle(r)
-path = [(125,25), (-125,26), (-60, 50), (25,125), (110, -30), (-90,-30),(10,100)]
-for x, y in path:
-    stencil(x,y, random.randint(40,60))
-    end_fill()
+
+    #  penup()
+    # goto(X,Y)
+    # pendown()
+    # color('papayawhip')
+    # begin_fill()
+    # circle(r)
+
+    # stencil(x,y, random.randint)
+    # end_fill()
+    # penup()
+
+#hair ---------------------------------------
+# def stencil(X,Y,r=60):
+#     penup()
+#     goto(X,Y)
+#     pendown()
+#     color('red')
+#     begin_fill()
+#     circle(r)
+# path = [(125,25), (-125,25), (-60, 50), (25,125), (110, -30), (-110,-30),(40,100)]
+# for X, Y in path:
+#     stencil(X,Y, random.randint(60, 70))
+#     end_fill()
+#     penup()
+    
+# def stencil(X,Y,r=40):
+#     penup()
+#     goto(X,Y)
+#     pendown()
+#     color('orangered')
+#     begin_fill()
+#     circle(r)
+# path = [(125,25), (-125,26), (-60, 50), (25,125), (110, -30), (-90,-30),(10,100)]
+# for X, Y in path:
+#     stencil(X,Y, random.randint(40,60))
+#     end_fill()
+
+
+done()
 #---------------------------------------------------
 
 
@@ -327,4 +411,3 @@ for x, y in path:
 # t.circle(20)
 # t.end_fill()
 
-done()
