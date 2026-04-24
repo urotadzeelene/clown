@@ -1,11 +1,12 @@
-# clown
-code will ask a user to choose colors for the background and hair. 
-After the user chooses colors, the clown will start automativally drawing itself with the users chosen colors.
-the code has built in highlits for the hair, to make it look more natural
+# Python drawing clown program
 
-After the clown is drawn, random colorfull circles will appear on the screen and a text will be shown "thank you for playin!" 
-# Requirement
+The program will ask a user to choose colors for the background and hair. 
+After the user chooses colors, the clown will start automatically drawing itself with the user's chosen colors. 
+The code has built-in highlights for the hair to make it look more natural.
 
-YOu need python version 3+ to run it
- open the file named "clown.py" 
+After the clown is drawn, random colorful circles will appear on the screen, and text will be shown: "Thank you for playing!"
+
+# Requirements
+The program requires Python version 3.14+ and using the turtle library.
+In order to start that program run `python clown.py`
 

@@ -5,12 +5,20 @@ def draw_lines(t):
     t.speed(0)
     t.hideturtle()
 
-    colors = ["red", "blue", "green", "yellow", "purple", "orange", "pink", "cyan", "magenta"]
+    colors = ["red", 
+              "blue", 
+              "green", 
+              "yellow", 
+              "purple",
+              "orange", 
+              "white", 
+              "cyan", 
+              "magenta"]
 
     for _ in range(60):
         x = random.randint(-300, 300)
         y = random.randint(-300, 300)
-        r = random.randint(80, 120)
+        r = random.randint(80, 130)
         t.penup()
         t.goto(x, y - r)
         t.pendown()
@@ -22,4 +30,5 @@ def draw_lines(t):
     t.penup()
     t.goto(0, 0)
     t.color("black")
-    t.write("thank you for playin!", align="center", font=("Arial", 24, "bold"))
+    t.write("Thank you for playing!", align="center", font=("Arial", 30, "bold"))
+   
