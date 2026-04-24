@@ -1,21 +1,16 @@
-from turtle import *
+def draw_lines(t):
+    t.speed(0)
 
-setup(800, 600)
-setworldcoordinates(-1000, -1000, 1000, 1000)
-def draw_spiral():
-    speed(0)
-distance = 4
+    colors = ["red", "blue", "green", "yellow"]
+    lines = 12
 
-pendown()
-    
-for steps in range(90):
-        for c in ('red','orange', 'yellow', 'green','blue','purple'):
-            color(c)
-            width(2)
-            forward(distance)
-            right(30)
-            distance += 1  # ⬅️ increase this a lot
+    t.pensize(6)
 
-print(window_width(), window_height())
-
-done()
+    for i in range(lines):
+        t.penup()
+        t.goto(0, 0)
+        t.setheading(360 / lines * i)
+        t.pendown()
+        
+        t.color(colors[i % len(colors)])
+        t.forward(200)
