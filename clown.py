@@ -1,16 +1,17 @@
 from turtle import *
 import random
 from chemi import draw_lines
+import time
 
 print("1. for green, 2. for yellow")
 
 bgcolor_number = input("color of back")
 match (bgcolor_number):
     case '1':
-          b_color = (0,1,0) # green
+          b_color = (0.6, 0.98, 0.737) # green
     
     case '2':
-        b_color = (0,1,1) #yellow 
+        b_color = (0.988, 0.969, 0.655) #yellow 
        
     case _:
         b_color = (1,1,1)
@@ -18,7 +19,7 @@ match (bgcolor_number):
     
 
 screen = Screen()
-speed(200)
+speed(0)
 bgcolor(b_color)
 
 print("1. for red, 2. for blue")
@@ -27,13 +28,13 @@ hcolor_number = int(input("color of hair"))
 match (hcolor_number):
     case 1:
         h_color = (1,0,0) # red
-        hh_color = (1.0, 0.647, 0) #orange
+        hh_color = (1.0, 0.34, 0.071) #orange
     case 2:
         h_color = (0,0,1) #blue
-        hh_color = (0.68, 0.85, 0.90) ## light blue
+        hh_color = (0.263, 0.639, 0.988) ## light blue
     case _:
         h_color = (1,1,1)
-        hh_color = (0.5,0.5,0.5)
+        hh_color = (0.718,0.796,0.871)
 
 
 
@@ -63,9 +64,9 @@ for X, Y in hair:
     end_fill()
     penup()
 
-highlight =[(140,2), (-150,25), (-60,50), (25,80), (30,80), (20,60), (50,50), (140,-30),(-140,-30), (35,80)]
+highlight =[(140,2), (-150,30), (-60,55), (25,81), (30,85), (20,65), (50,55), (140,-30),(-140,-30), (35,85)]
 for X, Y in highlight:
-    stencil(X,Y, random.randint(40,60), hh_color)
+    stencil(X,Y, random.randint(40,50), hh_color)
     end_fill()
     penup()
 
@@ -97,10 +98,9 @@ for x, y, h, r, e, w in arcs:
     circle(r, e)
     penup()
 
-screen = Screen()
+
+
+time.sleep(2)
 sun = Turtle()
-
-
 draw_lines(sun)
-
 done()
