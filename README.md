@@ -5,8 +5,7 @@ Users are asked to choose between numbers 1 and 2, which have specific colors fo
 After the user chooses colors, the clown will start automativally drawing itself with the users chosen colors.
 the code has built in highlits for the hair, to make it look more natural
 
-After the clown is drawn, there should be a ray of lines coming out of the back of the clown and there should be a text written on the screen "Congrats, this is your clown!"
-
+After the clown is drawn, random colorfull circles will appear on the screen and a text will be shown "thank you for playin!" 
 # Requirement
 
 YOu need python version 3+ to run it
