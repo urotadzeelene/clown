@@ -1,17 +1,20 @@
 from turtle import *
 import random
+from chemi import draw_lines
+
 print("1. for green, 2. for yellow")
 
 bgcolor_number = input("color of back")
 match (bgcolor_number):
     case '1':
-        b_color = (0,1,0) # green
+          b_color = (0,1,0) # green
     
     case '2':
         b_color = (0,1,1) #yellow 
        
     case _:
         b_color = (1,1,1)
+
     
 
 screen = Screen()
@@ -34,8 +37,12 @@ match (hcolor_number):
 
 
 
+draw_lines()
 
 
+# draw_lines()
+# penup()
+# goto(0,0)
 
 
 #head-----------------------------------------
@@ -62,16 +69,56 @@ for X, Y in hair:
 
 highlight =[(140,2), (-150,25), (-60,50), (25,80), (30,80), (20,60), (50,50), (140,-30),(-140,-30), (35,80)]
 for X, Y in highlight:
-    stencil(X,Y, random.randint(5,74), hh_color)
+    stencil(X,Y, random.randint(40,60), hh_color)
     end_fill()
     penup()
 
-eyes = [(-50,10, 19, 'white'),(50,10,19,'white'),(-50,10,15,'blue'),(50,10,15,'blue') ]
+eyes = [(-50,10, 19, 'white'),(48,10,19,'white'),(-50,10,15,'blue'),(48,10,15,'blue'), (-50,19,11,'black'), (48,19,11,'black'), (-50,36,3,'white'), (48,36,3,'white')]
 for X, Y, r, c in eyes:
     stencil(X,Y, r, c)
     end_fill()
     penup()
+nose = [(0,-40,29,'red'), (0,-20,17,'orange')]
+for X, Y, r, c in nose:
+    stencil(X,Y,r,c)
+    end_fill()
+    penup()
+# smile = [(-75,40,-60,5,(85,120)), (-92,-32, -60, 4,(17.6, 170)), (73,-16,-120, 4, (17.6,180))]
+# for X,Y,seth, W, circle, in smile:
+#     stencil(X,Y,seth, W, circle,'black')
+#     penup()
 
+arcs = [
+    (-75, -40, -60, 85, 120, 5),
+    (-92, -32, -60, 17.6, 170, 4),
+    (73, -16, -120, 17.6, 180, 4)
+]
+
+for x, y, h, r, e, w in arcs:
+    penup()
+    goto(x, y)
+    seth(h)         
+    pendown()
+    color("black")
+    width(w)
+    circle(r, e)
+    penup()
+col= []
+
+TEACHER I GIVE UP. IT IS NOT WORKING NO MATTER WHAT I DO!!!!
+
+
+
+
+  
+    
+    # for steps in range(90):
+    #     for c in ('red',):
+    #         color(c)
+    #         width(5)
+    #         distance += 2
+    #         forward(steps)
+    #         right(100)
 
 
     # penup()
