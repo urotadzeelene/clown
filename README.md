@@ -1,7 +1,5 @@
 # clown
-Code is supposed to ask the user what colors they want to choose for the clown which than the code is supposed to draw. 
-Users are asked to choose between numbers 1 and 2, which have specific colors for hair and background. 
-
+code will ask a user to choose colors for the background and hair. 
 After the user chooses colors, the clown will start automativally drawing itself with the users chosen colors.
 the code has built in highlits for the hair, to make it look more natural
 
